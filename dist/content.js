@@ -18714,6 +18714,86 @@ function doSomething() {
                 }
 
 
+                const memecoinTokens = [
+                    "$DOGE",    // Dogecoin
+                    "$SHIB",    // Shiba Inu
+                    "$PEPE",    // PepeCoin
+                    "$FLOKI",   // Floki Inu
+                    "$BabyDoge",// Baby Doge Coin
+                    "$LEASH",   // Doge Killer
+                    "$AKITA",   // Akita Inu
+                    "$KISHU",   // Kishu Inu
+                    "$HOGE",    // Hoge Finance
+                    "$DOBO",    // DogeBonk
+                    "$POPCAT"   // Popcat
+                  ];
+                  
+        
+                // Check if any memecoin token exists in the tweet text
+                const tokenExists = memecoinTokens.some(token => text_twitter.includes(token));
+        
+                if (!tokenExists) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.innerText = 'No memecoin token exists in the tweet';
+                    messageDiv.style.color = 'red'; // Optional: style the message
+                    messageDiv.style.marginTop = '10px'; // Optional: add some margin
+                    messageDiv.style.fontSize = '14px'; // Optional: adjust font size
+                    messageDiv.style.marginLeft = '10px';
+                    const targetElement = document.querySelector('#uniqueButton');
+                    if (targetElement) {
+                        targetElement.insertAdjacentElement('afterend', messageDiv);
+                    }
+                    return; // Exit the function if no token exists
+                }
+
+                if (tokenExists) {
+
+                if (!document.getElementById("uniqueId0")) {
+                    const outerDivx = document.createElement('div');
+                    outerDivx.id = 'uniqueId0';
+                    outerDivx.className = 'ui-container'; // Added class for styling
+                
+                    const innerDiv = document.createElement('div');
+                    innerDiv.id = 'firstIcon';
+                    innerDiv.style.paddingTop = "10px";
+                
+                    // Updated inner HTML to match the design structure in the image
+                    innerDiv.innerHTML = `
+                        <div style="background-color: #000000; border:2px solid #2F3336; color: white; padding: 20px; margin: 10px; border-radius: 15px; display: flex; flex-direction: row; align-items: center; gap: 15px;">
+                            <!-- Rounded div to replace the image -->
+                            <!-- Text content -->
+                            <div style="flex-grow: 1;">
+                            <div style="display: flex; flex-direction: row; gap:6px; align-items: center; margin-bottom:4px;">
+                            <div style="background-color: #FF9900; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="font-size: 14px; color: white; font-weight: bold;">W</span>
+                            </div>
+                            <div style="font-size: 14px; color: #bbb;">WBTC <span style="color: #3b82f6; cursor: pointer;">3NZ9...cqmJh</span></div>
+                            </div>
+                                <div style="font-size: 22px; font-weight: bold;">$305.2M MC <span style="font-size: 12px; color: #bbb; cursor: pointer;">&#x21bb;</span></div>
+                                <div style="font-size: 14px; color: #4caf50;">+5.44% today</div>
+                                <div style="font-size: 14px; color: #bbb;">$101.67K price</div>
+                            </div>
+                            <!-- Buy and Sell buttons -->
+                            <div style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+                                <button style="background-color: #4caf50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">Buy</button>
+                                <button style="background-color: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">Sell</button>
+                            </div>
+                        </div>`;
+                
+                    outerDivx.appendChild(innerDiv);
+                    const targetElement = document.querySelector('#uniqueButton');
+                
+                    // Insert outerDivx after the target element
+                    if (targetElement) {
+                        targetElement.insertAdjacentElement('afterend', outerDivx);
+                    }
+                    targetElement.insertAdjacentHTML('afterend', '<br>');
+                }
+        
+            }
+
+
+
 
 
 
